@@ -3,13 +3,14 @@ using System.Reflection;
 
 namespace Sunday1
 {
+    //Reflection in Methods, Property, Conustructor, late binding
     class Program
    {
     //    Assembly excutingAssemply = Assembly.GetExecutingAssembly();
     //    Type customerType = excutingAssemply.GetType("Sunday1.nulll"); // null, we dont have class nulll [[late binding]]
     //    object customerInstance = Activator.CreateInstance(customerType);
 
-        public int id { get; set; }
+        public int id { get; set; }   
 
         public string name { get; set; }
 
@@ -35,6 +36,15 @@ namespace Sunday1
             foreach (MethodInfo methode in methodes)
             {
                 Console.WriteLine(methode.ReturnType.Name+" cc" +methode.Name);
+                Console.ReadLine();
+
+            }
+
+
+            ConstructorInfo[] counstuctor = T.GetConstructors();
+            foreach (ConstructorInfo con in counstuctor)
+            {
+                Console.WriteLine(con.Name);
                 Console.ReadLine();
 
             }
